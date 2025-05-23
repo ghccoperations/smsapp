@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(button);
 
   button.addEventListener("click", () => {
-    msalInstance.loginPopup({ prompt: "select_account" }).then(response => {
+    msalInstance.loginPopup({ prompt: "login" }).then(response => {
       const account = response.account;
       const emailDomain = account.username.split("@")[1];
       if (emailDomain.toLowerCase() !== "ghcc.org") {
