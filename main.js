@@ -2,9 +2,10 @@ const msalConfig = {
   auth: {
     clientId: "928af24b-6c71-4471-ace8-3ff28c4003f7",
     authority: "https://login.microsoftonline.com/78bdb3b-86c6-4271-9e57-7dee76ab743b",
-    redirectUri: window.location.href
+    redirectUri: "https://ghccoperations.github.io/smsapp/"
   }
 };
+
 
 const msalInstance = new msal.PublicClientApplication(msalConfig);
 
