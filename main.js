@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.innerHTML = `<h2>Welcome, ${account.username}</h2>`;
       }
     }).catch(error => {
-      console.error(error);
+      console.error("MSAL Login Error:", error);
       document.body.innerHTML = "<p>Login failed or cancelled. Please refresh the page to try again.</p>";
     });
   });
