@@ -6,7 +6,7 @@ const msalConfig = {
   }
 };
 
-const msalInstance = new PublicClientApplication(msalConfig);
+const msalInstance = new msal.PublicClientApplication(msalConfig);
 
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.createElement("button");
