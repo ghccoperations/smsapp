@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GHCC Messaging App</title>
   <link rel="manifest" href="manifest.webmanifest" />  
+  <!-- Add this line above your main.js -->
   <script src="https://alcdn.msauth.net/browser/2.38.0/js/msal-browser.min.js"></script>
-  <script type="module" src="main.js?v=2"></script>
+  
+  <!-- This must come AFTER the MSAL script -->
+  <script src="main.js?v=3"></script>
+
 </head>
 <body>
   <h1>Welcome to the GHCC Messaging App</h1>
