@@ -2,7 +2,7 @@ import { PublicClientApplication } from 'https://alcdn.msauth.net/browser/2.38.0
 
 const msalConfig = {
   auth: {
-    clientId: "YOUR_CLIENT_ID_HERE",
+    clientId: "928af24b-6c71-4471-ace8-3ff28c4003f7",
     redirectUri: window.location.href
   }
 };
