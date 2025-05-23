@@ -10,15 +10,21 @@ const msalConfig = {
 
 const msalInstance = new PublicClientApplication(msalConfig);
 
-msalInstance.loginPopup().then(response => {
-  const account = response.account;
-  const emailDomain = account.username.split("@")[1];
-  if (emailDomain.toLowerCase() !== "ghcc.org") {
-    document.body.innerHTML = "<h2>Access denied</h2><p>This app is for GHCC employees only.</p>";
-  } else {
-    document.body.innerHTML += `<p>Welcome, ${account.username}</p>`;
-  }
-}).catch(error => {
-  console.error(error);
-  document.body.innerHTML = "<p>Login failed or cancelled. Please refresh the page to try again.</p>";
+
+document.body.innerHTML += '<button id="loginBtn">Login</button>';
+document.getElementById("loginBtn").addEventListener("click", () => {
+  msalInstance.loginPopup().then(response => {
+    const account = response.account;
+    const emailDomain = account.username.split("@")[1];
+    if (emailDomain.toLowerCase() !== "ghcc.org") {
+      document.body.innerHTML = "<h2>Access denied</h2><p>This app is for GHCC employees only.</p>";
+    } else {
+      document.body.innerHTML += `<p>Welcome, ${account.username}</p>`;
+    }
+  }).catch(error => {
+    console.error(error);
+    document.body.innerHTML = "<p>Login failed. Please refresh the page to try again.</p>";
+  });
 });
+
+
